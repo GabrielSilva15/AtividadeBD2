@@ -4,17 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
+
 <body>
     
-    <select id="estados">
-        <option value="" disabled selected>Escolha um estado</option>
-    </select>
+    <div class="selects">
+        <span>Estado</span>
+        <select id="estados">
+            <option value="" disabled selected>Escolha um estado</option>
+        </select>
+        <span>Cidade</span>
+        <select id="cidades">
+            <option value="" disabled selected>Escolha uma cidade</option>
+        </select>
+    </div>
+    
 
-    <select id="cidades">
-        <option value="" disabled selected>Escolha uma cidade</option>
-    </select>
+    <svg id="svgGeral" width="500" height="500" xmlns="http://www.w3.org/2000/svg" style="background-color: bisque;" >
+  
+        <path  fill="white" stroke="black"
+        stroke-width="0.001" id="pathEstado"/> 
+        
+        <path id="pathCidade" fill="black" stroke="red" stroke-width="0.001"/>
+    </svg>
 
     <script src="index.js"></script>
 </body>
 </html>
+

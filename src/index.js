@@ -26,9 +26,9 @@ app.use(cors());
 
 app.get('/svg/:estado/:municipio',async(req,res)=>{
     const {estado,municipio} = req.params;
-    let pathEstado = await client.query('Select ST_AsSVG(geom) FROM WHERE nome ilike $1',[estado]);
-    let pathMunicipio = await client.query('Select ST_AsSVG(geom) FROM WHERE nome ilike $1',[municipio]);
-    let viewBox = await client.query('Select viewBox($1)',[estado]);
+    let pathEstado = await client.query('Select ST_AsSVG(geom) FROM estado WHERE nome ilike $1',[estado]);
+    let pathMunicipio = await client.query('Select ST_AsSVG(geom) FROM municipio WHERE nome ilike $1',[municipio]);
+    let viewBox = await client.query('Select getviewBox($1)',[estado]);
 
     res.json({
             pathestado:pathEstado.rows[0].st_assvg,
